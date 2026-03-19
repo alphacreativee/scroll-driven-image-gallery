@@ -183,6 +183,10 @@ function animte() {
     spiral.rotation.z = -smoothX * CONFIG.parallaxStrength * 0.3;
   }
   cameraPositionUniform.value.copy(camera.position);
+  // Auto rotate (nếu muốn)
+  spiral.rotation.y += CONFIG.baseRotationSpeed;
+
+  // Scroll rotate
   spiral.rotation.y += spinVelocity;
   spinVelocity *= CONFIG.rotationDecay;
   renderer.render(scene, camera);
