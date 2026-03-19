@@ -165,8 +165,8 @@ window.addEventListener("mousemove", (e) => {
   mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
 });
 let isMobile = window.innerWidth < 992;
-function animte() {
-  requestAnimationFrame(animte);
+function animate() {
+  requestAnimationFrame(animate);
   const progress = Math.min(
     scrollY / (window.innerHeight * CONFIG.scrollMultiplier),
     1,
@@ -191,7 +191,7 @@ function animte() {
   spinVelocity *= CONFIG.rotationDecay;
   renderer.render(scene, camera);
 }
-animte();
+animate();
 window.addEventListener("resize", () => {
   isMobile = window.innerWidth < 992;
   camera.aspect = heroSection.clientWidth / heroSection.clientHeight;
